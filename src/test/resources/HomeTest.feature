@@ -2,11 +2,13 @@ Feature: Home
 
     Scenario: Home page é carregada corretaente
 
-    Given O usuário acesse a página https://beta.coodesh.com/
+    Given O usuário acessa a página https://beta.coodesh.com/
 
     When A pagina for carregada
 
-    Then Deve ser apresentado o botão Ver vagas
+    Then A página carregada deve ter o título "Perfil grátis de desenvolvedor e acesso as vagas | Coodesh"
+
+    And Deve ser apresentado o botão Ver vagas
 
     And Deve ser apresentado o botão Para Empresas
 

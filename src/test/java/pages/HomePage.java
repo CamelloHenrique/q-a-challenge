@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.locators.HomeLocators;
 
 public class HomePage {
@@ -21,9 +23,34 @@ public class HomePage {
     }
 
     public void navigateToHome(){
-
         driver.get(homeURL);
+    }
+
+    public void clickCookiesOk(){
         driver.findElement(cookiesOk).click();
     }
 
+    public Boolean isVerVagasVisible(){
+        return driver.findElement(verVagas).isDisplayed();
+    }
+
+    public Boolean isParaEmpresasVisible(){
+        return driver.findElement(paraEmpresas).isDisplayed();
+    }
+
+    public Boolean isBlogVisible(){
+        return driver.findElement(blog).isDisplayed();
+    }
+
+    public Boolean isLoginVisible(){
+        return driver.findElement(login).isDisplayed();
+    }
+
+    public Boolean isCriarContaVisible(){
+        return driver.findElement(criarConta).isDisplayed();
+    }
+
+    public String getTitle(){
+        return driver.getTitle();
+    }
 }
