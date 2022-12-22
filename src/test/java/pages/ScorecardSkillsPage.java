@@ -5,8 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import pages.locators.ScorecardSkillLocators;
 
-import java.util.logging.SocketHandler;
-
 public class ScorecardSkillsPage {
     private WebDriver driver;
     private By metodologiasAgeis = ScorecardSkillLocators.METODOLOGIAS_AGEIS.getBy();
@@ -126,10 +124,9 @@ public class ScorecardSkillsPage {
     public void proximoClick(){
         driver.findElement(proximoEnviar).click();
     }
-    //todo falta criar os métodos da classe DashboardPage
-    public DashboardPage enviarClick(){
+    public CurriculumPage enviarClick(){
         driver.findElement(proximoEnviar).click();
-        return new DashboardPage(driver);
+        return new CurriculumPage(driver);
     }
 
 

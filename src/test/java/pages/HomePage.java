@@ -39,7 +39,8 @@ public class HomePage {
     }
 
     public Boolean isBlogVisible(){
-        return driver.findElement(blog).isDisplayed();
+        return driver.findElement
+                (blog).isDisplayed();
     }
 
     public Boolean isLoginVisible(){
