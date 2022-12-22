@@ -53,4 +53,9 @@ public class HomePage {
     public String getTitle(){
         return driver.getTitle();
     }
+
+    public LoginPage loginClick(){
+        driver.findElement(login).click();
+        return new LoginPage(driver);
+    }
 }
