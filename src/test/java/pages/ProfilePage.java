@@ -2,14 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.locators.Personal;
 import pages.locators.ProfileLocators;
 
 public class ProfilePage {
     private WebDriver driver;
     private By nomeCompleto = ProfileLocators.NOME_COMPLETO.getBy();
-    private By backEndDeveloper = ProfileLocators.BACK_END_DEVELOPER.getBy();
-    private By mobileDeveloper = ProfileLocators.MOBILE_DEVELOPER.getBy();
     private By qaTestes = ProfileLocators.QA_TESTES.getBy();
     private By suasHabilidades = ProfileLocators.SUAS_HABILIDADES.getBy();
     private By experienciaGeral = ProfileLocators.EXPERIENCIA_GERAL.getBy();
@@ -25,14 +22,6 @@ public class ProfilePage {
     }
     public void insertNomeCompleto(String nomeCompleto){
         driver.findElement(this.nomeCompleto).sendKeys(nomeCompleto);
-    }
-
-    public void selectBackEndDeveloper(String backEndDeveloper){
-        driver.findElement(this.backEndDeveloper).sendKeys(backEndDeveloper);
-    }
-
-    public void selectMobileDeveloper(String mobileDeveloper){
-        driver.findElement(this.mobileDeveloper).sendKeys(mobileDeveloper);
     }
 
     public void selectQaTestes(String qaTestes){
@@ -71,10 +60,10 @@ public class ProfilePage {
     public void selectHibrida(String hibrida){
         driver.findElement(this.hibrida).sendKeys(hibrida);
     }
-    //todo classe personanl ainda não foi criado
-    public Personal proximoClick(){
+
+    public PersonalPage proximoClick(){
         driver.findElement(proximo).click();
-        return new Personal();
+        return new PersonalPage(driver);
     }
 
 

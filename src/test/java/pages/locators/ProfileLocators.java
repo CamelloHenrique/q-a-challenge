@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 
 public enum ProfileLocators {
     NOME_COMPLETO(By.id("displayName")),
-    BACK_END_DEVELOPER(By.cssSelector("#__next > div.container.space-bottom-3.space-top-2.container > div > div > div > div > div.fade.p-0.tab-pane.active.show > form > div.row.mx-gutters-2.mt-2.row > div:nth-child(1) > div > div")),
-    MOBILE_DEVELOPER(By.cssSelector("#__next > div.container.space-bottom-3.space-top-2.container > div > div > div > div > div.fade.p-0.tab-pane.active.show > form > div.row.mx-gutters-2.mt-2.row > div:nth-child(4) > div > div")),
     QA_TESTES(By.cssSelector("#__next > div.container.space-bottom-3.space-top-2.container > div > div > div > div > div.fade.p-0.tab-pane.active.show > form > div.row.mx-gutters-2.mt-2.row > div:nth-child(7) > div > div")),
     SUAS_HABILIDADES(By.className("css-yk16xz-control")),
     EXPERIENCIA_GERAL(By.cssSelector("#years_experience")),
