@@ -6,13 +6,12 @@ import pages.locators.ScorecardIntroLocators;
 
 public class ScorecardIntroPage {
     private WebDriver driver;
-    private By responderAgora = ScorecardIntroLocators.RESPONDER_AGORA.getBy();
     public ScorecardIntroPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public ScorecardSkillsPage responderAgoraClick(){
-        driver.findElement(responderAgora).click();
+        driver.findElement(ScorecardIntroLocators.RESPONDER_AGORA).click();
         return new ScorecardSkillsPage(driver);
     }
 }

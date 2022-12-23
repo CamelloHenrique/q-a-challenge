@@ -6,14 +6,13 @@ import pages.locators.LoginLocators;
 
 public class LoginPage {
     private WebDriver driver;
-    private By cadastrese = LoginLocators.CADASTRE_SE.getBy();
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public CadastresePage cadastreSeClick(){
-        driver.findElement(cadastrese).click();
+        driver.findElement(LoginLocators.CADASTRE_SE).click();
         return new CadastresePage(driver);
     }
 }

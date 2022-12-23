@@ -6,63 +6,53 @@ import pages.locators.ProfileLocators;
 
 public class ProfilePage {
     private WebDriver driver;
-    private By nomeCompleto = ProfileLocators.NOME_COMPLETO.getBy();
-    private By qaTestes = ProfileLocators.QA_TESTES.getBy();
-    private By suasHabilidades = ProfileLocators.SUAS_HABILIDADES.getBy();
-    private By experienciaGeral = ProfileLocators.EXPERIENCIA_GERAL.getBy();
-    private By momentoProfissional = ProfileLocators.MOMOENTO_PROFISSIONAL.getBy();
-    private By whatsapp = ProfileLocators.WHATSAPP.getBy();
-    private By cidade = ProfileLocators.CIDADE.getBy();
-    private By remota = ProfileLocators.REMOTA.getBy();
-    private By presencial = ProfileLocators.PRESENCIAL.getBy();
-    private By hibrida = ProfileLocators.HIBRIDA.getBy();
-    private By proximo = ProfileLocators.PROXIMO.getBy();
+
     public ProfilePage(WebDriver driver) {
         this.driver = driver;
     }
     public void insertNomeCompleto(String nomeCompleto){
-        driver.findElement(this.nomeCompleto).sendKeys(nomeCompleto);
+        driver.findElement(ProfileLocators.NOME_COMPLETO).sendKeys(nomeCompleto);
     }
 
     public void selectQaTestes(String qaTestes){
-        driver.findElement(this.qaTestes).sendKeys(qaTestes);
+        driver.findElement(ProfileLocators.QA_TESTES).sendKeys(qaTestes);
     }
 
     //TODO aceitar uma lista de habilidades
     public void insertSuasHabilidades(String suasHabilidades){
-        driver.findElement(this.suasHabilidades).sendKeys(suasHabilidades);
+        driver.findElement(ProfileLocators.SUAS_HABILIDADES).sendKeys(suasHabilidades);
     }
 
     public void insertExperienciaGeral(String experienciaGeral){
-        driver.findElement(this.experienciaGeral).sendKeys(experienciaGeral);
+        driver.findElement(ProfileLocators.EXPERIENCIA_GERAL).sendKeys(experienciaGeral);
     }
 
     public void insertMomentoProfissional(String momentoProfissional){
-        driver.findElement(this.momentoProfissional).sendKeys(momentoProfissional);
+        driver.findElement(ProfileLocators.MOMOENTO_PROFISSIONAL).sendKeys(momentoProfissional);
     }
 
     public void insertWhatsapp(String whatsapp){
-        driver.findElement(this.whatsapp).sendKeys(whatsapp);
+        driver.findElement(ProfileLocators.WHATSAPP).sendKeys(whatsapp);
     }
 
     public void insertCidade(String cidade){
-        driver.findElement(this.cidade).sendKeys(cidade);
+        driver.findElement(ProfileLocators.CIDADE).sendKeys(cidade);
     }
 
     public void selectRemota(String remota){
-        driver.findElement(this.remota).sendKeys(remota);
+        driver.findElement(ProfileLocators.REMOTA).sendKeys(remota);
     }
 
     public void selectPresencial(String presencial){
-        driver.findElement(this.presencial).sendKeys(presencial);
+        driver.findElement(ProfileLocators.PRESENCIAL).sendKeys(presencial);
     }
 
     public void selectHibrida(String hibrida){
-        driver.findElement(this.hibrida).sendKeys(hibrida);
+        driver.findElement(ProfileLocators.HIBRIDA).sendKeys(hibrida);
     }
 
     public PersonalPage proximoClick(){
-        driver.findElement(proximo).click();
+        driver.findElement(ProfileLocators.PROXIMO).click();
         return new PersonalPage(driver);
     }
 

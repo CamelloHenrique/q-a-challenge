@@ -7,34 +7,29 @@ import pages.locators.CadastreseLocators;
 
 public class CadastresePage {
     private WebDriver driver;
-    private By nomeCompleto = CadastreseLocators.NOMEM_COMPLETO.getBy();
-    private By email = CadastreseLocators.EMAIL.getBy();
-    private By senha = CadastreseLocators.SENHA.getBy();
-    private By liEAceito = CadastreseLocators.LI_E_ACEITO.getBy();
-    private By inscrevaSe = CadastreseLocators.INSCREVA_SE.getBy();
 
     public CadastresePage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void insertNomeCompleto(String nomeCompleto){
-        driver.findElement(this.nomeCompleto).sendKeys(nomeCompleto);
+        driver.findElement(CadastreseLocators.NOMEM_COMPLETO).sendKeys(nomeCompleto);
     }
 
     public void insertEmail(String email){
-        driver.findElement(this.email).sendKeys(email);
+        driver.findElement(CadastreseLocators.EMAIL).sendKeys(email);
     }
 
     public void insertSenha(String senha){
-        driver.findElement(this.senha).sendKeys(senha);
+        driver.findElement(CadastreseLocators.SENHA).sendKeys(senha);
     }
 
     public void liEAceitoChange(){
-        driver.findElement(liEAceito).sendKeys(Keys.SPACE);
+        driver.findElement(CadastreseLocators.LI_E_ACEITO).sendKeys(Keys.SPACE);
     }
 
     public ProfilePage inscrevaSeClick(){
-        driver.findElement(inscrevaSe).click();
+        driver.findElement(CadastreseLocators.INSCREVA_SE).click();
         return new ProfilePage(driver);
     }
 }

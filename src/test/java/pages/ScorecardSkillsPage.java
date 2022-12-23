@@ -7,25 +7,6 @@ import pages.locators.ScorecardSkillLocators;
 
 public class ScorecardSkillsPage {
     private WebDriver driver;
-    private By metodologiasAgeis = ScorecardSkillLocators.METODOLOGIAS_AGEIS.getBy();
-    private By modelagemDeDados = ScorecardSkillLocators.MODELAGEM_DE_DADOS.getBy();
-    private By estruturasDeDados = ScorecardSkillLocators.ESTRUTURA_DE_DADOS.getBy();
-    private By uml = ScorecardSkillLocators.UML.getBy();
-    private By git = ScorecardSkillLocators.GIT.getBy();
-    private By comunicacaoTecnica = ScorecardSkillLocators.COMUNICACAO_TECNICA.getBy();
-    private By gestaoDeTempo = ScorecardSkillLocators.GESTAO_DE_TEMPO.getBy();
-    private By logica = ScorecardSkillLocators.LOGICA.getBy();
-    private By testesExploratorios = ScorecardSkillLocators.TESTES_EXPLORATORIOS.getBy();
-    private By casoDeUso = ScorecardSkillLocators.CASO_DE_USO.getBy();
-    private By behaviourDrivenDevelopment = ScorecardSkillLocators.BEHAVIOUR_DRIVEN_DEVELOPMENT.getBy();
-    private By testDrivenDevelopment = ScorecardSkillLocators.TEST_DRIVEN_DEVELOPMENT.getBy();
-    private By automacaoDeTestes = ScorecardSkillLocators.AUTOMACAO_DE_TESTES.getBy();
-    private By planejamentoDeTestes = ScorecardSkillLocators.PLANEJAMENTO_DE_TESTES.getBy();
-    private By analiseDeRequisitos = ScorecardSkillLocators.ANALISE_DE_REQUISITOS.getBy();
-    private By bdd = ScorecardSkillLocators.BDD.getBy();
-    private By cucumber = ScorecardSkillLocators.CUCUMBER.getBy();
-    private By proximoEnviar = ScorecardSkillLocators.PROXIMO_ENVIAR.getBy();
-
     public ScorecardSkillsPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -37,95 +18,95 @@ public class ScorecardSkillsPage {
     //o comportamento esperado é que o método mova o silider até o final.
     public void slideMetodologiasAgeis(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(metodologiasAgeis).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.METODOLOGIAS_AGEIS).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideModelagemDeDados(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(modelagemDeDados).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.MODELAGEM_DE_DADOS).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideEstruturasDeDados(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(estruturasDeDados).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.ESTRUTURA_DE_DADOS).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideUml(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(uml).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.UML).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideGit(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(git).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.GIT).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideComunicacaoTecnica(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(comunicacaoTecnica).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.COMUNICACAO_TECNICA).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideGestaoDeTempo(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(gestaoDeTempo).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.GESTAO_DE_TEMPO).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideLogica(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(logica).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.LOGICA).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideTestesExploratorios(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(testesExploratorios).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.TESTES_EXPLORATORIOS).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideCasoDeUso(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(casoDeUso).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.CASO_DE_USO).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideBehaviourDrivenDevelopment(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(behaviourDrivenDevelopment).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.BEHAVIOUR_DRIVEN_DEVELOPMENT).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideTestDrivenDevelopment(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(testDrivenDevelopment).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.TEST_DRIVEN_DEVELOPMENT).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideAutomacaoDeTestes(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(automacaoDeTestes).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.AUTOMACAO_DE_TESTES).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slidePlanejamentoDeTestes(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(planejamentoDeTestes).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.PLANEJAMENTO_DE_TESTES).sendKeys(Keys.ARROW_RIGHT);
         }
     }
 
     public void slideAnaliseDeRequisitos(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(analiseDeRequisitos).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.ANALISE_DE_REQUISITOS).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideBdd(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(bdd).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.BDD).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void slideCucumber(Integer times){
         for (int i = 0; i<times; i++){
-            driver.findElement(cucumber).sendKeys(Keys.ARROW_RIGHT);
+            driver.findElement(ScorecardSkillLocators.CUCUMBER).sendKeys(Keys.ARROW_RIGHT);
         }
     }
     public void proximoClick(){
-        driver.findElement(proximoEnviar).click();
+        driver.findElement(ScorecardSkillLocators.PROXIMO_ENVIAR).click();
     }
     public CurriculumPage enviarClick(){
-        driver.findElement(proximoEnviar).click();
+        driver.findElement(ScorecardSkillLocators.PROXIMO_ENVIAR).click();
         return new CurriculumPage(driver);
     }
 
