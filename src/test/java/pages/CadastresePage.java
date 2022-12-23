@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import pages.locators.CadastreseLocators;
@@ -24,7 +23,7 @@ public class CadastresePage {
         driver.findElement(CadastreseLocators.SENHA).sendKeys(senha);
     }
 
-    public void liEAceitoChange(){
+    public void liEAceitoOk(){
         driver.findElement(CadastreseLocators.LI_E_ACEITO).sendKeys(Keys.SPACE);
     }
 

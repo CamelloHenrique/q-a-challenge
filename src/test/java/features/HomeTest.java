@@ -17,7 +17,7 @@ public class HomeTest {
     private WebDriver driver = null;
     private HomePage homePage = null;
 
-    @Before
+    @Before("@Home")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
