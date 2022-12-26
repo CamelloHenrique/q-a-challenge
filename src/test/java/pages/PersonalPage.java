@@ -1,8 +1,8 @@
 package pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import pages.locators.LoginLocators;
+import org.openqa.selenium.interactions.Actions;
 import pages.locators.PersonalLocators;
 
 public class PersonalPage {
@@ -19,18 +19,30 @@ public class PersonalPage {
     public void insertRelacaoComunidade(String relacaoComunidade){
         driver.findElement(PersonalLocators.RELACAO_COMUNIDADE).sendKeys(relacaoComunidade);
     }
-    public void insertCausaSociais(String causaSociais){
-        driver.findElement(PersonalLocators.CAUSAS_SOCIAIS).sendKeys(causaSociais);
+    //todo selectCausaSocial escolhe uma causa social "aleatóriamente", deveria ser possivel selecionar uma causa social específica
+    public void selectCausaSocial(String causaSociais){
+        driver.findElement(PersonalLocators.CAUSAS_SOCIAIS).click();
+        Actions keyDown = new Actions(driver);
+        keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
+
     }
-    public void insertRaca(String raca){
-        driver.findElement(PersonalLocators.RACA).sendKeys(raca);
+    public void insertRaca(){
+        driver.findElement(PersonalLocators.RACA).click();
+        Actions keyDown = new Actions(driver);
+        keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();
+
     }
-    public void insertGenero(String genero){
-        driver.findElement(PersonalLocators.GENERO).sendKeys(genero);
+    public void insertGenero(){
+
+        driver.findElement(PersonalLocators.GENERO).click();
+        Actions keyDown = new Actions(driver);
+        keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();
     }
 
-    public void insertOrientacaoSexual(String orientacaoSexual){
-        driver.findElement(PersonalLocators.ORIENTACAO_SEXUAL).sendKeys(orientacaoSexual);
+    public void insertOrientacaoSexual(){
+        driver.findElement(PersonalLocators.ORIENTACAO_SEXUAL).click();
+        Actions keyDown = new Actions(driver);
+        keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();
     }
     public void insertDeficiencia(String deficiencia){
         driver.findElement(PersonalLocators.DEFICIENCIA).sendKeys(deficiencia);

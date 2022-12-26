@@ -1,6 +1,8 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.locators.ProfileLocators;
 import utils.SeleniumUtils;
 
@@ -13,13 +15,16 @@ public class ProfilePage {
     public void insertNomeCompleto(String nomeCompleto){
         driver.findElement(ProfileLocators.NOME_COMPLETO).sendKeys(nomeCompleto);
     }
-    public void selectQaTestes(String qaTestes){
-        driver.findElement(ProfileLocators.QA_TESTES).sendKeys(qaTestes);
+    public void selectQaTestes(){
+        SeleniumUtils.esperarAteCampoVisivel(driver,ProfileLocators.QA_TESTES);
+        driver.findElement(ProfileLocators.QA_TESTES).click();
     }
 
     //TODO aceitar uma lista de habilidades
-    public void insertSuasHabilidades(String suasHabilidades){
-        driver.findElement(ProfileLocators.SUAS_HABILIDADES).sendKeys(suasHabilidades);
+    public void cucumberClick(){
+        SeleniumUtils.esperarAteCampoVisivel(driver,ProfileLocators.CUCUMBER);
+        WebElement webElement =driver.findElement(ProfileLocators.CUCUMBER);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", webElement);
     }
 
     public void insertExperienciaGeral(String experienciaGeral){
@@ -45,8 +50,8 @@ public class ProfilePage {
     public void selectPresencial(String presencial){
         driver.findElement(ProfileLocators.PRESENCIAL).sendKeys(presencial);
     }
-    public void selectHibrida(String hibrida){
-        driver.findElement(ProfileLocators.HIBRIDA).sendKeys(hibrida);
+    public void selectHibrida(){
+        driver.findElement(ProfileLocators.HIBRIDA).click();
     }
     public String getCurrentPageUrl(){
         SeleniumUtils.esperarAteCampoVisivel(driver,ProfileLocators.QA_TESTES);
@@ -60,8 +65,8 @@ public class ProfilePage {
         return driver.findElement(ProfileLocators.QA_TESTES).isDisplayed();
     }
 
-    public Boolean isSuasHabilidadesVisible(){
-        return driver.findElement(ProfileLocators.SUAS_HABILIDADES).isDisplayed();
+    public Boolean isCucumberVisible(){
+        return driver.findElement(ProfileLocators.CUCUMBER).isDisplayed();
     }
 
     public Boolean isExperienciaGeralVisible(){
