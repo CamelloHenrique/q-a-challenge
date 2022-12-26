@@ -3,10 +3,12 @@ package features;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
 import randomUser.RandomUser;
@@ -30,7 +32,8 @@ public class PerfilTest {
     private ScorecardIntroPage scorecardIntroPage;
     private ScorecardSkillsPage scorecardSkillsPage;
     private CurriculumPage curriculumPage;
-    @Before
+
+    @Before("@CriaçãoDeConta")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -139,18 +142,6 @@ public class PerfilTest {
     @And("Clicar em Responder Agora")
     public void clicar_em_responder_agora() {
         scorecardSkillsPage = scorecardIntroPage.responderAgoraClick();
-//        scorecardSkillsPage.slideCasoDeUso("avançado");
-//        scorecardSkillsPage.proximoClick();
-//        scorecardSkillsPage.slideBehaviourDrivenDevelopment("avançado");
-//        scorecardSkillsPage.slideTestDrivenDevelopment("avançado");
-//        scorecardSkillsPage.slideUnitTest("avançado");
-//        scorecardSkillsPage.slideTestCoverage("avançado");
-//        scorecardSkillsPage.slideAutomacaoDeTestes("avançado");
-//        scorecardSkillsPage.slideAutomacaoDeTestes("avançado");
-//        scorecardSkillsPage.slidePlanejamentoDeTestes("avançado");
-//        scorecardSkillsPage.slideAnaliseDeRequisitos("avançado");
-//        scorecardSkillsPage.slideCucumber("avançado");
-//        curriculumPage = scorecardSkillsPage.enviarClick();
     }
 
     @When("informar seu grau de conhecimento em cada habilidade como na tabela abaixo e em seguida clicar em próximo")
@@ -244,6 +235,57 @@ public class PerfilTest {
                     break;
             }
         }
-        scorecardSkillsPage.enviarClick();
+        curriculumPage = scorecardSkillsPage.enviarClick();
+    }
+
+    @Then("O usuário deverá ser redireicionado para a página {string}")
+    public void deverá_ser_redireicionado_para_a_página(String url) {
+        curriculumPage.esperarAPaginaCarregar();
+        assertThat(curriculumPage.getNomeDaPaginaAtual()).isEqualTo(url);
+    }
+
+    @Then("Deverá ser apresentado os dados, abaixo listados, referentes ao usuário logado")
+    public void deverá_ser_apresentado_os_dados_abaixo_listados_referentes_ao_usuário_logado(List<String> perfilDataList) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+        for (String perfilData : perfilDataList ) {
+            switch (perfilData.toLowerCase()){
+                case "nome completo":
+                    assertThat(curriculumPage.getNomeCompleto()).isEqualTo(randomUser.getFullName());
+                    break;
+                case "cidade":
+                    assertThat(curriculumPage.getCidade()).isEqualTo("Mariana");
+                    break;
+                case "carreiras":
+                    assertThat(curriculumPage.getCarreiras()).isEqualTo("QA / Testes");
+                    break;
+                case "email":
+                    assertThat(curriculumPage.getEmail()).isEqualTo(randomUser.getEmail());
+                    break;
+                case "whatsapp":
+                    assertThat(curriculumPage.getWhatsapp()).isEqualTo("5531989650256");
+                    break;
+                case "causas sociais":
+                    assertThat(curriculumPage.getCausasSociais()).isNotBlank();
+                    break;
+            }
+        }
+    }
+
+    @Then("as habilidades abaixo listada com seu nivel de conhecimento")
+    public void as_habilidades_abaixo_listada_com_seu_nivel_de_conhecimento(Map<String,String> skillList) {
+        for (WebElement element: curriculumPage.getHabilidades()) {
+            //getHabilidades, retorna alguns elementos que não são habilidades, o if abaixo resolve este problema
+            if(!element.getText().isBlank()) {
+                String habilidade = element.getText().split("\\r?\\n")[0];
+                String nivel = element.getText().split("\\r?\\n")[1];
+                assertThat(skillList.get(habilidade).toLowerCase()).isEqualTo(nivel.toLowerCase());
+            }
+        }
     }
 }

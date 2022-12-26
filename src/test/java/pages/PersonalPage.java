@@ -23,7 +23,7 @@ public class PersonalPage {
     public void selectCausaSocial(String causaSociais){
         driver.findElement(PersonalLocators.CAUSAS_SOCIAIS).click();
         Actions keyDown = new Actions(driver);
-        keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
+        keyDown.sendKeys(Keys.ENTER).perform();
 
     }
     public void insertRaca(){
@@ -43,9 +43,6 @@ public class PersonalPage {
         driver.findElement(PersonalLocators.ORIENTACAO_SEXUAL).click();
         Actions keyDown = new Actions(driver);
         keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();
-    }
-    public void insertDeficiencia(String deficiencia){
-        driver.findElement(PersonalLocators.DEFICIENCIA).sendKeys(deficiencia);
     }
     public ScorecardIntroPage proximoClick(){
         driver.findElement(PersonalLocators.PROXIMO).click();

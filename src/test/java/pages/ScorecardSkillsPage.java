@@ -15,7 +15,7 @@ public class ScorecardSkillsPage {
         this.driver = driver;
     }
     //Esse método serve para mover o slide que representa o nével que o usuário tem de determinada habilidade.
-    //A váriavel times, serve pra definir quantas vezes o slide será movido.
+    //A váriavel times, serve para definir quantas vezes o slide será movido.
     //O comando driver.findElement(locator).click(); irá colocar o slide em nível "básico", com isso, caso o nível da
     //Habilidade seja este, a função não irá fazer nada.
     private void slideBar(By locator,String level) {

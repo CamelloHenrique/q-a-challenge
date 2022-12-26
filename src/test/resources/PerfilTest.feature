@@ -5,9 +5,9 @@ Feature: Criação de conta e preenchimento de perfil de pessoa candidata
     And Clique no botão Login
     And Clique no botão Cadastre-se
     When O usuário preencher os campos abaixo
-    | NOME COMPLETO  |
-    | EMAIL          |
-    | SENHA          |
+      | NOME COMPLETO  |
+      | EMAIL          |
+      | SENHA          |
     And Aceitar os termos e condições
     And Clicar em inscreva-se
     And ele informar que a carreira desejada é a de QA/Testes
@@ -44,7 +44,38 @@ Feature: Criação de conta e preenchimento de perfil de pessoa candidata
       | Planejamento de Testes       | PRATICANTE |
       | Análise de requisitos        | PRATICANTE |
       | Cucumber                     | PRATICANTE |
-    #Then Deverá ser redireicionado para a página "https://beta.coodesh.com/onboarding/developer/curriculum"
+    Then O usuário deverá ser redireicionado para a página "https://beta.coodesh.com/onboarding/developer/curriculum"
+    And Deverá ser apresentado os dados, abaixo listados, referentes ao usuário logado
+      | Nome completo  |
+      | Cidade         |
+      | Carreiras      |
+      | Email          |
+      | Whatsapp       |
+      | Causas sociais |
+    And as habilidades abaixo listada com seu nivel de conhecimento
+      | Habilidade                   | Nível      |
+      | Metodologias Ágeis / Scrum   | BÁSICO     |
+      | Análise e Modelagem de dados | BÁSICO     |
+      | Estrutura de Dados           | BÁSICO     |
+      | UML                          | BÁSICO     |
+      | GIT                          | BÁSICO     |
+      | Comunicação Técnica          | PRATICANTE |
+      | Gestão de Tempo              | PRATICANTE |
+      | Lógica                       | PRATICANTE |
+      | Testes exploratórios         | PRATICANTE |
+      | Caso de uso                  | PRATICANTE |
+      | Behaviour Driven Development | PRATICANTE |
+      | Test Driven Development      | AVANÇADO   |
+      | Unit Tests                   | AVANÇADO   |
+      | Test Coverage                | AVANÇADO   |
+      | Automação de Testes          | AVANÇADO   |
+      | Planejamento de Testes       | PRATICANTE |
+      | Análise de requisitos        | PRATICANTE |
+      | Cucumber                     | PRATICANTE |
+          |
+
+
+
   #@ValidarCurriculum
   #Scenario: Validar Curriculum
   #  Given O usuário acessar a página "https://beta.coodesh.com/onboarding/developer/curriculum"
