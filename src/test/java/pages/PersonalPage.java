@@ -12,7 +12,6 @@ public class PersonalPage {
         this.driver = driver;
     }
 
-    //TODO receber uma lista de comunidades
     public void insertComunidades(String comunidades){
         driver.findElement(PersonalLocators.COMUNIDADES).sendKeys(comunidades);
     }
@@ -24,7 +23,6 @@ public class PersonalPage {
         driver.findElement(PersonalLocators.CAUSAS_SOCIAIS).click();
         Actions keyDown = new Actions(driver);
         keyDown.sendKeys(Keys.ENTER).perform();
-
     }
     public void insertRaca(){
         driver.findElement(PersonalLocators.RACA).click();
@@ -33,7 +31,6 @@ public class PersonalPage {
 
     }
     public void insertGenero(){
-
         driver.findElement(PersonalLocators.GENERO).click();
         Actions keyDown = new Actions(driver);
         keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();

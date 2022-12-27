@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,12 +13,10 @@ import pages.*;
 import randomUser.RandomUser;
 import utils.SeleniumUtils;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 public class PerfilTest {
     private WebDriver driver;
@@ -56,13 +53,6 @@ public class PerfilTest {
     }
     @When("O usuário preencher os campos abaixo")
     public void o_usuário_preencher_os_campos_abaixo(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
         randomUser = new RandomUser();
         cadastresePage.insertNomeCompleto(randomUser.getFullName());
         cadastresePage.insertEmail(randomUser.getEmail());

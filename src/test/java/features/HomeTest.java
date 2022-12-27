@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 
-import java.sql.Driver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

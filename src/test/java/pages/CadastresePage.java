@@ -27,6 +27,7 @@ public class CadastresePage {
         driver.findElement(CadastreseLocators.LI_E_ACEITO).sendKeys(Keys.SPACE);
     }
 
+    //retorna um controlador para a próxima página
     public ProfilePage inscrevaSeClick(){
         driver.findElement(CadastreseLocators.INSCREVA_SE).click();
         return new ProfilePage(driver);

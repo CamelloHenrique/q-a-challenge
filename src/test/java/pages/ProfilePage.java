@@ -20,7 +20,6 @@ public class ProfilePage {
         driver.findElement(ProfileLocators.QA_TESTES).click();
     }
 
-    //TODO aceitar uma lista de habilidades
     public void cucumberClick(){
         SeleniumUtils.esperarAteCampoVisivel(driver,ProfileLocators.CUCUMBER);
         WebElement webElement =driver.findElement(ProfileLocators.CUCUMBER);

@@ -1,6 +1,6 @@
 Feature: Criação de conta e preenchimento de perfil de pessoa candidata
   @CriaçãoDeConta
-  Scenario: Criação de conta
+  Scenario: Criação de conta e preenchimento de perfil de pessoa candidata com dados válidos
     Given O usuário acessa a página do coodesh
     And Clique no botão Login
     And Clique no botão Cadastre-se
@@ -72,12 +72,3 @@ Feature: Criação de conta e preenchimento de perfil de pessoa candidata
       | Planejamento de Testes       | PRATICANTE |
       | Análise de requisitos        | PRATICANTE |
       | Cucumber                     | PRATICANTE |
-          |
-
-
-
-  #@ValidarCurriculum
-  #Scenario: Validar Curriculum
-  #  Given O usuário acessar a página "https://beta.coodesh.com/onboarding/developer/curriculum"
-  #  When A página for carregada
-  #  Then Deve ser apresentado o email do
